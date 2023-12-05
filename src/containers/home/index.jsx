@@ -10,6 +10,7 @@ const Home = () => {
                     <div className="home__data">
                         <h1 >Hi, I'm Hamdi</h1>
                         <h1>Full Stack Developer</h1>
+                        <h1>welcome to my portfolio</h1>
                         
                     </div>
                     </section>
