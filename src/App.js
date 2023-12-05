@@ -1,28 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Route, Routes, useLocation } from 'react-router-dom'
+import Particles from "react-particles";
+import { loadFull } from "tsparticles";
+
+
+
+ import './App.css'
+import Home from './containers/home'
+import About from './containers/about'
+import Resume from './containers/resume'
+import Contact from './containers/contact'
+import Skills from './containers/skills'
+import Navbar from './composants/navbar'
+import particles from './utils/particles'
+
+
+
 
 function App() {
+  const handleInit = async (engine) => {
+
+    await loadFull(engine);
+  };
+
+  const location = useLocation();
+
+  const isHome = location.pathname === "/";
+  
+  
   return (
     <div className="App">
-      <header className="App-header">
-
-      <h1>My React App</h1>
-      <p>My first React app</p>
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer"> 
-         
-            Learn React
-          </a>
-
-
-
    
+   {
+      isHome &&  (
+
+     <Particles id="particles" init={handleInit} options={particles} />
+  )}
+   
+   
+   
+   
+   
+   
+    <Navbar/>
 
 
-      </header>
+
+
+   <div className='App__main-page-content' >
+   <Routes>
+   <Route path="/" element={<Home />} />
+   <Route path="/about" element={<About />} />
+   <Route path="/projects" element={<Resume />} />
+   <Route path="/contact" element={<Contact />} />
+   <Route path="/skills" element={<Skills />} />
+
+ </Routes>
+   
+   </div>
+
     </div>
   );
 }
