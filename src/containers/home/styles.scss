@@ -1,19 +1,19 @@
-
-.home{
+.home {
     position: relative;
     height: 100%;
-    display: flex   ;
+    display: flex;
     align-content: center;
     justify-content: center;
-    .home__data{
+
+    .home__data {
         padding-top: 10%;
         display: flex;
         flex-direction: column;
         align-content: center;
         justify-content: center;
         color: #E9C46A;
-        
-        h1{
+
+        h1 {
             font-size: 8rem;
             font-weight: 700;
             margin: 0px;
@@ -21,75 +21,156 @@
             position: relative;
             overflow: hidden;
             white-space: nowrap;
-            animation: animate 2s linear ;
-    
-    }
- 
-}
+            animation: animate 2s steps(30, end);
+        }
 
-}
 
-@keyframes animate{
-    0%{
-        transform: translateX(100%);
     }
-    100%{
-        transform: translateX(0%);
-    }
-}
 
-@media only screen and (max-width: 550px){
-    .home{
-        .home__data{
-            padding-top: 30%;
-        }
-        .home__title{
-            font-size: 3rem;
-            line-height: 5rem;
-        }
-        .home__subtitle{
-            font-size: 1.5rem;
-        }
-        .home__description{
-            font-size: 1.2rem;
-        }
-    }
-}
+    .home__social {
+        display: flex;
+        width: auto;
+        justify-self: center;
+        justify-content: space-around;
+        margin-top: 1rem;
 
-@media only screen and (min-width:551px)and (max-width: 768px){
-    .home{
-        .home__data{
-            padding-top: 3%;
-        }
-        .home__title{
+        .home__social-icon {
             font-size: 4rem;
-            line-height: 6rem;
-        }
-        .home__subtitle{
-            font-size: 1.2rem;
-        }
-        .home__description{
-            font-size: 1rem;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            transition: all 1s ease;
+
+            &:hover {
+                color: #2A9D8F;
+            }
         }
     }
+    .home__contact-btn {
+        font-size: 1.5rem;
+        background-color: #2A9D8F;
+        
+        color: #fff;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        margin-top: 1rem;
+        cursor: pointer;
+        transition: all 1s ease;
+
+        &:hover {
+            background-color: #E76F51;
+            color: #fff;
+        }
+    }
+
+
+
+
 }
 
-@media only screen and (min-width:769px)and (max-width: 1024px){
-    .home{
-        .home__data{
+@keyframes animate {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 550px) {
+    .home {
+        .home__data {
             padding-top: 30%;
-        }
-        .home__title{
-            font-size: 6rem;
-            line-height: 8rem;
-        }
-        .home__subtitle{
-            font-size: 1.5rem;
-        }
-        .home__description{
-            font-size: 1.2rem;
+
+            .home__title {
+                font-size: 3rem;
+                line-height: 5rem;
+            }
+
+            .home__subtitle {
+                font-size: 1.5rem;
+            }
+
+            .home__description {
+                font-size: 1.2rem;
+            }
+            .home__contact-btn{ 
+                width: auto;
+            }
         }
     }
 }
 
+@media only screen and (min-width:551px)and (max-width: 768px) {
+    .home {
+        .home__data {
+            padding-top: 30%;
 
+            .home__title {
+                font-size: 4rem;
+                line-height: 6rem;
+            }
+
+            .home__subtitle {
+                font-size: 1.2rem;
+            }
+
+            .home__description {
+                font-size: 1rem;
+            }
+
+            .home__contact-btn{ 
+                width: auto;
+            }
+    }
+}
+
+@media only screen and (min-width:769px)and (max-width: 1024px) {
+    .home {
+        .home__data {
+            padding-top: 30%;
+
+            .home__title {
+                font-size: 6rem;
+                line-height: 8rem;
+            }
+
+            .home__subtitle {
+                font-size: 1.5rem;
+            }
+
+            .home__description {
+                font-size: 1.2rem;
+            }
+            .home__contact-btn{ 
+                color: #553C9A;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:1025px)and (max-width: 1440px) {
+    .home {
+        .home__data {
+            padding-top: 30%;
+
+            .home__title {
+                font-size: 8rem;
+                line-height: 10rem;
+            }
+
+            .home__subtitle {
+                font-size: 2rem;
+            }
+
+            .home__description {
+                font-size: 1.5rem;
+            }
+            .home__contact-btn{ 
+                width: auto;
+            }
+        }
+    }
+}   }
